@@ -19,7 +19,7 @@ Player.prototype.update = function(deltaTime)
 {
 	if ( typeof(this.rotation) === "undefined" )
 		this.rotation = 0;
-		
+	
 	if (keyboard.isKeyDown(keyboard.KEY_SPACE))
 	{
 		this.rotation -= deltaTime;
@@ -35,9 +35,7 @@ Player.prototype.draw = function(context)
 	context.save();
 		context.translate(this.x, this.y);
 		context.rotate(this.rotation);
-		context.context.drawImage(this.image, -this.width/2, -this.height/2);
+		context.drawImage(this.image, -this.width/2, -this.height/2);
 	context.restore();
 	
-	context.drawImage(this.image, this.x, this.y);
-
 };
